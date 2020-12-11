@@ -39,7 +39,7 @@ class Line:
     self.line_bot_api.push_message(roomId, TextSendMessage(text = message))
     return True
 
-  def sendNotify(self, message:str = '', roomId:str='', token = None):
+  def sendNotify(self, message:str = '', token = None):
     headers = {'Authorization':f'Bearer {token or self.accessKey}'}
     return post('https://notify-api.line.me/api/notify',
                 headers=headers, data = {'message': message})
