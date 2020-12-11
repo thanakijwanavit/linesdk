@@ -47,7 +47,7 @@ nb_path: "linesdk.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="FunctionNames" class="doc_header"><code>class</code> <code>FunctionNames</code><a href="https://github.com/thanakijwanavit/linesdk/tree/master/linesdk/linesdk.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FunctionNames</code>(<strong><code>branchName</code></strong>:<code>str</code>=<em><code>'dev-manual'</code></em>)</p>
+<h2 id="FunctionNames" class="doc_header"><code>class</code> <code>FunctionNames</code><a href="https://github.com/thanakijwanavit/linesdk/tree/master/linesdk/linesdk.py#L14" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FunctionNames</code>(<strong><code>branchName</code></strong>:<code>str</code>=<em><code>'dev-manual'</code></em>)</p>
 </blockquote>
 
 <pre><code>determine function and resources name based on branchName</code></pre>
@@ -80,7 +80,7 @@ nb_path: "linesdk.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Line" class="doc_header"><code>class</code> <code>Line</code><a href="https://github.com/thanakijwanavit/linesdk/tree/master/linesdk/linesdk.py#L27" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Line</code>(<strong><code>accessKey</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h2 id="Line" class="doc_header"><code>class</code> <code>Line</code><a href="https://github.com/thanakijwanavit/linesdk/tree/master/linesdk/linesdk.py#L28" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Line</code>(<strong><code>accessKey</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 
 <pre><code>the main class for interacting with product endpoint
@@ -107,7 +107,7 @@ user/pw are optional</code></pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="LineLambda" class="doc_header"><code>class</code> <code>LineLambda</code><a href="https://github.com/thanakijwanavit/linesdk/tree/master/linesdk/linesdk.py#L45" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LineLambda</code>(<strong><code>user</code></strong>=<em><code>None</code></em>, <strong><code>pw</code></strong>=<em><code>None</code></em>, <strong><code>region</code></strong>=<em><code>'ap-southeast-1'</code></em>)</p>
+<h2 id="LineLambda" class="doc_header"><code>class</code> <code>LineLambda</code><a href="https://github.com/thanakijwanavit/linesdk/tree/master/linesdk/linesdk.py#L57" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LineLambda</code>(<strong><code>user</code></strong>=<em><code>None</code></em>, <strong><code>pw</code></strong>=<em><code>None</code></em>, <strong><code>region</code></strong>=<em><code>'ap-southeast-1'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -195,12 +195,12 @@ user/pw are optional</code></pre>
 <span class="ansi-red-fg">LineBotApiError</span>                           Traceback (most recent call last)
 <span class="ansi-green-fg">&lt;timed exec&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-18-7627a593e700&gt;</span> in <span class="ansi-cyan-fg">send</span><span class="ansi-blue-fg">(self, message, roomId)</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> 
-<span class="ansi-green-intense-fg ansi-bold">     11</span>   <span class="ansi-green-fg">def</span> send<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> message<span class="ansi-blue-fg">:</span>str <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">,</span> roomId<span class="ansi-blue-fg">:</span>str<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg">     </span>self<span class="ansi-blue-fg">.</span>line_bot_api<span class="ansi-blue-fg">.</span>push_message<span class="ansi-blue-fg">(</span>roomId<span class="ansi-blue-fg">,</span> TextSendMessage<span class="ansi-blue-fg">(</span>text <span class="ansi-blue-fg">=</span> message<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span>     <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
+<span class="ansi-green-fg">&lt;ipython-input-14-655cd6ee6e8c&gt;</span> in <span class="ansi-cyan-fg">send</span><span class="ansi-blue-fg">(self, message, roomId)</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span> 
+<span class="ansi-green-intense-fg ansi-bold">     12</span>   <span class="ansi-green-fg">def</span> send<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> message<span class="ansi-blue-fg">:</span>str <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">,</span> roomId<span class="ansi-blue-fg">:</span>str<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">     </span>self<span class="ansi-blue-fg">.</span>line_bot_api<span class="ansi-blue-fg">.</span>push_message<span class="ansi-blue-fg">(</span>roomId<span class="ansi-blue-fg">,</span> TextSendMessage<span class="ansi-blue-fg">(</span>text <span class="ansi-blue-fg">=</span> message<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span>     <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">True</span>
+<span class="ansi-green-intense-fg ansi-bold">     15</span> 
 
 <span class="ansi-green-fg">~/anaconda3/envs/python38/lib/python3.8/site-packages/linebot/api.py</span> in <span class="ansi-cyan-fg">push_message</span><span class="ansi-blue-fg">(self, to, messages, retry_key, notification_disabled, timeout)</span>
 <span class="ansi-green-intense-fg ansi-bold">    145</span>         }
@@ -223,8 +223,58 @@ user/pw are optional</code></pre>
 </span><span class="ansi-green-intense-fg ansi-bold">   1176</span>                 status_code<span class="ansi-blue-fg">=</span>response<span class="ansi-blue-fg">.</span>status_code<span class="ansi-blue-fg">,</span>
 <span class="ansi-green-intense-fg ansi-bold">   1177</span>                 headers<span class="ansi-blue-fg">=</span>dict<span class="ansi-blue-fg">(</span>response<span class="ansi-blue-fg">.</span>headers<span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
 
-<span class="ansi-red-fg">LineBotApiError</span>: LineBotApiError: status_code=429, request_id=609465ac-f9f4-479a-813f-9cbf80bfd9e9, error_response={&#34;details&#34;: [], &#34;message&#34;: &#34;You have reached your monthly limit.&#34;}, headers={&#39;Server&#39;: &#39;openresty&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;x-line-request-id&#39;: &#39;609465ac-f9f4-479a-813f-9cbf80bfd9e9&#39;, &#39;x-content-type-options&#39;: &#39;nosniff&#39;, &#39;x-xss-protection&#39;: &#39;1; mode=block&#39;, &#39;x-frame-options&#39;: &#39;DENY&#39;, &#39;Content-Length&#39;: &#39;50&#39;, &#39;Expires&#39;: &#39;Wed, 14 Oct 2020 01:38:06 GMT&#39;, &#39;Cache-Control&#39;: &#39;max-age=0, no-cache, no-store&#39;, &#39;Pragma&#39;: &#39;no-cache&#39;, &#39;Date&#39;: &#39;Wed, 14 Oct 2020 01:38:06 GMT&#39;, &#39;Connection&#39;: &#39;close&#39;}</pre>
+<span class="ansi-red-fg">LineBotApiError</span>: LineBotApiError: status_code=429, request_id=f8dbe399-7e08-4b34-88f1-9389e32685da, error_response={&#34;details&#34;: [], &#34;message&#34;: &#34;You have reached your monthly limit.&#34;}, headers={&#39;Server&#39;: &#39;openresty&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;x-line-request-id&#39;: &#39;f8dbe399-7e08-4b34-88f1-9389e32685da&#39;, &#39;x-content-type-options&#39;: &#39;nosniff&#39;, &#39;x-xss-protection&#39;: &#39;1; mode=block&#39;, &#39;x-frame-options&#39;: &#39;DENY&#39;, &#39;Content-Length&#39;: &#39;50&#39;, &#39;Expires&#39;: &#39;Mon, 19 Oct 2020 05:03:02 GMT&#39;, &#39;Cache-Control&#39;: &#39;max-age=0, no-cache, no-store&#39;, &#39;Pragma&#39;: &#39;no-cache&#39;, &#39;Date&#39;: &#39;Mon, 19 Oct 2020 05:03:02 GMT&#39;, &#39;Connection&#39;: &#39;close&#39;}</pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SendNotify">SendNotify<a class="anchor-link" href="#SendNotify"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">sendNotify</span><span class="p">(</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;nothing&#39;</span><span class="p">,</span> <span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;ECycqerh1xQKGlXAb2qifyz39A0GW8LHyX1hBBFSQGl&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 13.3 ms, sys: 64 µs, total: 13.4 ms
+Wall time: 311 ms
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;{&#34;status&#34;:200,&#34;message&#34;:&#34;ok&#34;}&#39;</pre>
+</div>
+
 </div>
 
 </div>

@@ -7,6 +7,7 @@ from lambdasdk.lambdasdk import Lambda
 from linebot.models import TextSendMessage
 from linebot import LineBotApi
 from json import JSONDecodeError
+from requests import post
 import bz2,  boto3, base64, logging, os
 
 # Cell
@@ -32,41 +33,49 @@ class Line:
   def __init__(self,
                accessKey:str = ''):
     self.line_bot_api = LineBotApi(accessKey)
+    self.accessKey = accessKey
 
   def send(self, message:str = '', roomId:str=''):
     self.line_bot_api.push_message(roomId, TextSendMessage(text = message))
     return True
+
+  def sendNotify(self, message:str = '', roomId:str='', token = None):
+    headers = {'Authorization':f'Bearer {token or self.accessKey}'}
+    return post('https://notify-api.line.me/api/notify',
+                headers=headers, data = {'message': message})
 
   @staticmethod
   def lambdaSend(event, _):
     line = Line(accessKey = os.environ.get('LINEACCESSKEY') or event['accessKey'])
     line.send(message = event['message'], roomId = event['roomId'])
 
+  @staticmethod
+  def lambdaNotify(event, _):
+    line = Line()
+    line.sendNotify(message = event['message'], token = event['token'])
+
 class LineLambda:
   def __init__(self, user = None, pw=None, region = 'ap-southeast-1'):
     self.user = user
     self.pw = pw
     self.region = region
+  def notify(self, message:str = '', token:str = '', functionName = 'notify-line'):
+    lambda_ = Lambda(user=self.user, pw=self.pw, region=self.region)
+    try:
+      lambda_.invoke(functionName=functionName,invocationType='Event',
+                    input = {'message':message,'token':token})
+    except JSONDecodeError as e: logging.exception('maybe there is no response')
+    return True
 
   def send(self, message:str = '', roomId:str='',
-           functionName = 'send-line',
-           accessKey = ''
-          ):
-    lambda_ = Lambda(
-      user = self.user,
-      pw = self.pw,
-      region = self.region
-    )
+           functionName = 'send-line', accessKey = '' ):
+    lambda_ = Lambda( user = self.user, pw = self.pw, region = self.region )
     try:
-      lambda_.invoke(
-        functionName = functionName,
+      lambda_.invoke( functionName = functionName,
         input = {
           'message': message,
           'roomId': roomId,
           'accessKey': accessKey
-        },
-        invocationType = 'Event'
-      )
-    except JSONDecodeError as e:
-      logging.exception('maybe there is no response')
+        }, invocationType = 'Event' )
+    except JSONDecodeError as e: logging.exception('maybe there is no response')
     return True
